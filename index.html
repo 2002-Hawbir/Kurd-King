@@ -1,0 +1,886 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KURD KING - مەڵبەندێک بۆ فیلم و</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #0a0818 0%, #16122b 100%);
+            color: #f0f0f0;
+            min-height: 100vh;
+            padding: 20px;
+            overflow-x: hidden;
+        }
+        
+        .container {
+            max-width: 1600px;
+            margin: 0 auto;
+        }
+        
+        header {
+            text-align: center;
+            padding: 60px 0 40px;
+            position: relative;
+        }
+        
+        /* Enhanced Neon Effect for KURD KING */
+        .logo-container {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 30px;
+        }
+        
+        .logo {
+            font-size: 5.5rem;
+            font-weight: 900;
+            letter-spacing: 6px;
+            text-transform: uppercase;
+            color: #fff;
+            position: relative;
+            z-index: 2;
+            text-shadow: 
+                0 0 10px #ff2b4d, 
+                0 0 20px #ff2b4d, 
+                0 0 40px #ff2b4d, 
+                0 0 80px #ff2b4d, 
+                0 0 120px #ff2b4d;
+            animation: neonGlow 1.5s infinite alternate;
+        }
+        
+        .logo::before {
+            content: 'KURD KING';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            color: transparent;
+            background: linear-gradient(90deg, #ff2b4d, #ff6b7c, #ff2b4d);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            z-index: -1;
+            animation: gradientFlow 3s linear infinite;
+        }
+        
+        .logo::after {
+            content: '';
+            position: absolute;
+            top: 110%;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%;
+            height: 20px;
+            background: rgba(255, 43, 77, 0.6);
+            border-radius: 50%;
+            filter: blur(15px);
+            animation: shadowPulse 2s infinite alternate;
+        }
+        
+        .neon-tube {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #ff2b4d, #ff6b7c, #ff2b4d);
+            background-size: 200% 100%;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            z-index: -2;
+            animation: gradientFlow 3s linear infinite;
+            text-shadow: none;
+        }
+        
+        .neon-reflection {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(transparent 70%, rgba(255,255,255,0.15) 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            z-index: 1;
+        }
+        
+        /* Animations */
+        @keyframes neonGlow {
+            0% {
+                text-shadow: 
+                    0 0 5px #ff2b4d, 
+                    0 0 15px #ff2b4d, 
+                    0 0 30px #ff2b4d, 
+                    0 0 60px #ff2b4d, 
+                    0 0 90px #ff2b4d;
+            }
+            100% {
+                text-shadow: 
+                    0 0 10px #ff2b4d, 
+                    0 0 25px #ff2b4d, 
+                    0 0 45px #ff2b4d, 
+                    0 0 80px #ff2b4d, 
+                    0 0 120px #ff2b4d;
+            }
+        }
+        
+        @keyframes gradientFlow {
+            0% {
+                background-position: 0% 50%;
+            }
+            100% {
+                background-position: 200% 50%;
+            }
+        }
+        
+        @keyframes shadowPulse {
+            0% {
+                opacity: 0.3;
+                width: 70%;
+            }
+            100% {
+                opacity: 0.7;
+                width: 90%;
+            }
+        }
+        
+        .flicker {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, #ff2b4d, #ff6b7c);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            opacity: 0;
+            animation: flicker 0.15s infinite alternate;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        @keyframes flicker {
+            0%, 19%, 21%, 23%, 25%, 54%, 56%, 100% {
+                opacity: 0;
+            }
+            20%, 24%, 55% {
+                opacity: 0.4;
+            }
+        }
+        
+        .tagline {
+            font-size: 1.6rem;
+            color: #b8c1cc;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+            text-shadow: 0 0 10px rgba(255, 43, 77, 0.3);
+        }
+        
+        /* Neon border effect for search container */
+        .search-container {
+            background: rgba(25, 22, 45, 0.9);
+            border-radius: 20px;
+            padding: 30px;
+            margin-bottom: 50px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+            backdrop-filter: blur(10px);
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            border: 1px solid rgba(255, 43, 77, 0.3);
+            overflow: hidden;
+        }
+        
+        .search-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            border: 1px solid transparent;
+            border-radius: 20px;
+            animation: neonBorder 2s infinite linear;
+            pointer-events: none;
+        }
+        
+        @keyframes neonBorder {
+            0% {
+                box-shadow: 
+                    0 0 5px rgba(255, 43, 77, 0.3),
+                    0 0 10px rgba(255, 43, 77, 0.2),
+                    0 0 15px rgba(255, 43, 77, 0.1);
+            }
+            50% {
+                box-shadow: 
+                    0 0 10px rgba(255, 43, 77, 0.5),
+                    0 0 20px rgba(255, 43, 77, 0.3),
+                    0 0 30px rgba(255, 43, 77, 0.1);
+            }
+            100% {
+                box-shadow: 
+                    0 0 5px rgba(255, 43, 77, 0.3),
+                    0 0 10px rgba(255, 43, 77, 0.2),
+                    0 0 15px rgba(255, 43, 77, 0.1);
+            }
+        }
+        
+        .search-bar {
+            display: flex;
+            margin-bottom: 25px;
+            position: relative;
+        }
+        
+        .search-bar input {
+            flex: 1;
+            padding: 20px 30px;
+            border: none;
+            border-radius: 60px;
+            font-size: 1.2rem;
+            background: rgba(15, 12, 30, 0.8);
+            color: #f0f0f0;
+            border: 2px solid rgba(255, 43, 77, 0.4);
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .search-bar input:focus {
+            outline: none;
+            border-color: #ff2b4d;
+            box-shadow: 0 0 0 5px rgba(255, 43, 77, 0.3);
+        }
+        
+        .search-bar input::placeholder {
+            color: #8a8a9d;
+            font-weight: 500;
+        }
+        
+        .search-bar button {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+            background: linear-gradient(135deg, #ff2b4d, #d81c3c);
+            border: none;
+            color: white;
+            padding: 14px 30px;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 43, 77, 0.4);
+            font-weight: 600;
+        }
+        
+        .search-bar button:hover {
+            background: linear-gradient(135deg, #ff4d5a, #ff2b4d);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 43, 77, 0.5);
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            color: #b8c1cc;
+            padding: 15px 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            margin-top: 20px;
+            font-size: 1.1rem;
+        }
+        
+        .movie-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 35px;
+            padding: 0 20px;
+        }
+        
+        .movie-card {
+            background: linear-gradient(145deg, #1e1b37, #17142c);
+            border-radius: 20px;
+            overflow: hidden;
+            transition: transform 0.4s ease, box-shadow 0.4s ease;
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 43, 77, 0.2);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+        
+        .movie-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(255, 43, 77, 0.3);
+            z-index: 10;
+        }
+        
+        .poster-container {
+            position: relative;
+            width: 100%;
+            height: 600px;
+            overflow: hidden;
+        }
+        
+        .movie-poster {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        
+        .movie-card:hover .movie-poster {
+            transform: scale(1.05);
+        }
+        
+        .movie-info {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            background: rgba(15, 12, 30, 0.7);
+        }
+        
+        .movie-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #ffccd5;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 1;
+            -webkit-box-orient: vertical;
+        }
+        
+        .movie-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 1.1rem;
+            color: #b8c1cc;
+            margin-bottom: 18px;
+            gap: 15px;
+        }
+        
+        .movie-year {
+            font-weight: 600;
+        }
+        
+        .movie-rating {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: linear-gradient(135deg, #ff2b4d, #d81c3c);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .movie-length {
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        .movie-genre {
+            background: rgba(255, 43, 77, 0.2);
+            color: #ff6b7c;
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            display: inline-block;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .movie-description {
+            font-size: 1.05rem;
+            line-height: 1.6;
+            color: #c5cdd8;
+            margin-bottom: 25px;
+            flex-grow: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+        }
+        
+        .movie-footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .watch-btn {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #ff2b4d, #d81c3c);
+            color: white;
+            text-align: center;
+            border-radius: 10px;
+            text-decoration: none;
+            font-weight: 700;
+            transition: all 0.3s ease;
+            font-size: 1rem;
+            box-shadow: 0 5px 15px rgba(255, 43, 77, 0.3);
+        }
+        
+        .watch-btn:hover {
+            background: linear-gradient(135deg, #ff4d5a, #ff2b4d);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(255, 43, 77, 0.4);
+        }
+        
+        .no-results {
+            text-align: center;
+            padding: 60px;
+            grid-column: 1 / -1;
+            color: #8a8a9d;
+            font-size: 1.4rem;
+            background: rgba(25, 22, 45, 0.5);
+            border-radius: 20px;
+        }
+        
+        .no-results i {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            color: #ff2b4d;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 50px 0 30px;
+            color: #8a8a9d;
+            font-size: 1.1rem;
+            margin-top: 60px;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin: 30px 0;
+            flex-wrap: wrap;
+        }
+        
+        .footer-links a {
+            color: #b8c1cc;
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 1.1rem;
+            padding: 8px 15px;
+            border-radius: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: #ff6b7c;
+            background: rgba(255, 43, 77, 0.1);
+        }
+        
+        .copyright {
+            margin-top: 25px;
+            font-size: 1rem;
+        }
+        
+        .featured-label {
+            position: absolute;
+            top: 20px;
+            left: 0;
+            background: linear-gradient(90deg, #ff2b4d, #ff6b7c);
+            color: white;
+            padding: 8px 25px 8px 20px;
+            font-weight: 700;
+            clip-path: polygon(0 0, 90% 0, 100% 50%, 90% 100%, 0 100%);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Floating neon particles */
+        .neon-particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 43, 77, 0.5);
+            box-shadow: 0 0 10px rgba(255, 43, 77, 0.7);
+            animation: float 15s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(0) translateX(0) rotate(0deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-100vh) translateX(100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 1200px) {
+            .movie-grid {
+                grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+                gap: 30px;
+            }
+            
+            .poster-container {
+                height: 420px;
+            }
+            
+            .logo {
+                font-size: 4.5rem;
+            }
+        }
+        
+        @media (max-width: 900px) {
+            .logo {
+                font-size: 4rem;
+                letter-spacing: 4px;
+            }
+            
+            .tagline {
+                font-size: 1.4rem;
+            }
+            
+            .search-bar {
+                flex-direction: column;
+            }
+            
+            .search-bar button {
+                position: relative;
+                margin-top: 20px;
+                width: 100%;
+                top: 0;
+                right: 0;
+            }
+            
+            .movie-grid {
+                grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+                gap: 25px;
+            }
+            
+            .poster-container {
+                height: 380px;
+            }
+        }
+        
+        @media (max-width: 600px) {
+            .logo {
+                font-size: 2.8rem;
+                letter-spacing: 3px;
+            }
+            
+            .tagline {
+                font-size: 1.2rem;
+                max-width: 90%;
+            }
+            
+            .search-container {
+                padding: 20px;
+            }
+            
+            .search-bar input {
+                padding: 16px 20px;
+                font-size: 1rem;
+            }
+            
+            .movie-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 0;
+            }
+            
+            .poster-container {
+                height: 450px;
+            }
+            
+            .stats {
+                flex-direction: column;
+                gap: 10px;
+                text-align: center;
+            }
+            
+            .movie-meta {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="neon-particles" id="neonParticles"></div>
+    
+    <div class="container">
+        <header>
+            <div class="logo-container">
+                <div class="logo">KURD KING</div>
+                <div class="neon-tube">KURD KING</div>
+                <div class="neon-reflection">KURD KING</div>
+                <div class="flicker">KURD KING</div>
+            </div>
+            <p class="tagline">Experience cinema in stunning high-definition with our premium collection of movies</p>
+        </header>
+        
+        <div class="search-container">
+            <div class="search-bar">
+                <input type="text" id="searchInput" placeholder="Search movies by title, genre, or year...">
+                <button id="searchButton"><i class="fas fa-search"></i> SEARCH</button>
+            </div>
+            <div class="stats">
+                <span id="movieCount">67 Movies Available</span>
+                <span>Average Rating: <span id="avgRating">7.8</span>/10</span>
+            </div>
+        </div>
+        
+        <div class="movie-grid" id="movieGrid">
+            <!-- Movies will be loaded here -->
+        </div>
+        
+        <footer>
+            <div class="footer-links">
+                <a href="#"><i class="fas fa-home"></i> Home</a>
+                <a href="#"><i class="fas fa-film"></i> Movies</a>
+                <a href="#"><i class="fas fa-tv"></i> Series</a>
+                <a href="#"><i class="fas fa-info-circle"></i> About</a>
+                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+            </div>
+            <p class="copyright">© 2023 Kurd King. All rights reserved. Premium Movie Streaming Platform.</p>
+        </footer>
+    </div>
+
+    <script>
+        // Movie database with all 67 movies
+        const movies = [
+            { title: "A working man", image: "A working man.png", year: 2021, rating: 7.2, genre: "Drama", description: "A hardworking man struggles to balance his job and family life in this emotional drama.", length: "1h 58m" },
+            { title: "American assassin", image: "American assassin.png", year: 2017, rating: 6.8, genre: "Action", description: "A CIA black ops recruit avenges his murdered girlfriend in this action-packed thriller.", length: "1h 52m" },
+            { title: "American liar", image: "American liar.png", year: 2020, rating: 6.5, genre: "Comedy", description: "A pathological liar gets caught up in a web of deception in this hilarious comedy.", length: "1h 45m" },
+            { title: "Arcadian", image: "Arcadian.png", year: 2022, rating: 7.1, genre: "Sci-Fi", description: "In a post-apocalyptic world, a family fights for survival against mysterious creatures.", length: "2h 12m" },
+            { title: "Arcane", image: "Arcane.png", year: 2021, rating: 9.2, genre: "Animation", description: "The origins of two iconic League champions and the power that will tear them apart.", length: "6h 40m" },
+            { title: "Ash", image: "Ash.png", year: 2023, rating: 6.9, genre: "Horror", description: "A group of friends encounter supernatural forces in an abandoned town.", length: "1h 48m" },
+            { title: "Better days", image: "Better days.png", year: 2019, rating: 7.5, genre: "Drama", description: "A bullied teenage girl forms an unlikely friendship with a small-time criminal.", length: "2h 15m" },
+            { title: "Black mirror 1", image: "Black mirror1.png", year: 2011, rating: 8.8, genre: "Sci-Fi", description: "An anthology series exploring techno-paranoia and the dark side of technology.", length: "3h 20m" },
+            { title: "Black mirror 2", image: "Black mirror2.png", year: 2013, rating: 8.6, genre: "Sci-Fi", description: "More tales that tap into the collective unease about the modern world.", length: "3h 30m" },
+            { title: "Black mirror 3", image: "Black mirror3.png", year: 2016, rating: 8.7, genre: "Sci-Fi", description: "Further exploration of twisted, high-tech near-futures.", length: "6h 15m" },
+            { title: "Black mirror 4", image: "Black mirror4.png", year: 2017, rating: 8.4, genre: "Sci-Fi", description: "Six new stories that challenge our relationship with technology.", length: "5h 45m" },
+            { title: "Black mirror 5", image: "Black mirror5.png", year: 2019, rating: 7.9, genre: "Sci-Fi", description: "Three new stories exploring the consequences of advanced technology.", length: "4h 10m" },
+            { title: "Black mirror 6", image: "Black mirror6.png", year: 2022, rating: 7.0, genre: "Sci-Fi", description: "More unsettling tales of humanity's relationship with technology.", length: "4h 55m" },
+            { title: "Black mirror 7", image: "Black mirror7.png", year: 2023, rating: 7.3, genre: "Sci-Fi", description: "The latest season of the acclaimed anthology series.", length: "5h 20m" },
+            { title: "Cinderella game", image: "Cinderella game.png", year: 2021, rating: 6.4, genre: "Romance", description: "A modern retelling of the classic fairy tale with a competitive twist.", length: "1h 52m" },
+            { title: "Cleaner", image: "Cleaner.png", year: 2022, rating: 6.7, genre: "Thriller", description: "A crime scene cleaner discovers evidence that implicates him in a murder.", length: "1h 50m" },
+            { title: "Death note", image: "Death note.png", year: 2006, rating: 8.9, genre: "Animation", description: "A high school student discovers a supernatural notebook that kills anyone whose name is written in it.", length: "37 episodes" },
+            { title: "Death of a unicorn", image: "Death of a unicorn.png", year: 2023, rating: 7.4, genre: "Fantasy", description: "A mythical creature's demise sparks a magical conflict in this fantasy epic.", length: "2h 5m" },
+            { title: "Deva", image: "Deva.png", year: 2022, rating: 7.0, genre: "Drama", description: "A spiritual journey of self-discovery in the mountains of Kurdistan.", length: "1h 55m" },
+            { title: "District B13.1", image: "District B13.1.png", year: 2004, rating: 7.3, genre: "Action", description: "An undercover cop and ex-thug try to infiltrate a gang-controlled ghetto.", length: "1h 25m" },
+            { title: "District B13.2", image: "District B13.2.png", year: 2009, rating: 6.8, genre: "Action", description: "The sequel to the parkour-filled action film set in a dystopian Paris.", length: "1h 41m" },
+            { title: "Du patti", image: "Du patti.png", year: 2022, rating: 7.6, genre: "Crime", description: "A high-stakes poker game turns deadly in this crime thriller.", length: "2h 12m" },
+            { title: "Exhuma", image: "Exhuma.png", year: 2023, rating: 7.8, genre: "Horror", description: "A family moves into a new home only to discover it's haunted by vengeful spirits.", length: "1h 53m" },
+            { title: "G 20", image: "G 20.png", year: 2022, rating: 6.3, genre: "Political", description: "A political thriller centered around the G20 summit and international intrigue.", length: "2h 8m" },
+            { title: "Hannibal 1", image: "Hannibal1.png", year: 2001, rating: 7.8, genre: "Thriller", description: "The continuation of the story of Dr. Hannibal Lecter.", length: "2h 11m" },
+            { title: "Hannibal 2", image: "Hannibal2.png", year: 2002, rating: 7.4, genre: "Thriller", description: "Further adventures of the infamous cannibalistic psychiatrist.", length: "2h 5m" },
+            { title: "Hannibal 3", image: "Hannibal3.png", year: 2007, rating: 7.0, genre: "Thriller", description: "The final chapter in the Hannibal Lecter trilogy.", length: "2h 1m" },
+            { title: "Havoc", image: "Havoc.png", year: 2022, rating: 6.5, genre: "Action", description: "A special forces soldier battles terrorists in a war-torn city.", length: "1h 49m" },
+            { title: "High Rollers", image: "High Rollers.png", year: 2021, rating: 6.9, genre: "Drama", description: "The high-stakes world of professional gambling and its consequences.", length: "2h 3m" },
+            { title: "Hound's hill", image: "Hound's hill.png", year: 2023, rating: 7.7, genre: "Crime", description: "A detective investigates a series of murders in a small mountain town.", length: "2h 15m" },
+            { title: "Iffet", image: "Iffet.png", year: 2020, rating: 7.1, genre: "Drama", description: "A story about honor, tradition, and personal sacrifice in Kurdish society.", length: "2h 8m" },
+            { title: "Immaculate", image: "Immaculate.png", year: 2023, rating: 7.5, genre: "Horror", description: "A nun discovers dark secrets in a remote convent.", length: "1h 56m" },
+            { title: "Mickey 17", image: "Mickey 17.png", year: 2023, rating: 7.9, genre: "Sci-Fi", description: "An expendable employee embarks on a dangerous mission on an ice planet.", length: "2h 22m" },
+            { title: "One life", image: "One life.png", year: 2022, rating: 7.2, genre: "Drama", description: "A man reflects on his life choices and the paths not taken.", length: "1h 58m" },
+            { title: "Our blues", image: "Our blues.png", year: 2022, rating: 8.1, genre: "Drama", description: "A heartfelt drama about life, love, and relationships in a coastal town.", length: "20 episodes" },
+            { title: "Promised hearts", image: "Promised hearts.png", year: 2021, rating: 7.0, genre: "Romance", description: "Two lovers separated by war reunite after many years apart.", length: "1h 52m" },
+            { title: "Remainder", image: "Remainder.png", year: 2023, rating: 6.6, genre: "Thriller", description: "A man with amnesia tries to piece together his mysterious past.", length: "2h 5m" },
+            { title: "Resident playbook", image: "Resident playbook.png", year: 2022, rating: 7.3, genre: "Medical", description: "The lives and challenges of medical residents in a busy hospital.", length: "15 episodes" },
+            { title: "Ski into love", image: "Ski into love.png", year: 2023, rating: 6.8, genre: "Romance", description: "A romantic comedy set against the backdrop of a ski resort.", length: "1h 50m" },
+            { title: "Spring of youth", image: "Spring of youth.png", year: 2022, rating: 7.4, genre: "Drama", description: "A coming-of-age story about a group of friends in their final school year.", length: "16 episodes" },
+            { title: "Subteran", image: "Subteran.png", year: 2023, rating: 7.1, genre: "Sci-Fi", description: "Scientists discover an ancient civilization deep beneath the Earth's surface.", length: "2h 10m" },
+            { title: "The best thing", image: "The best thing.png", year: 2022, rating: 6.9, genre: "Comedy", description: "A hilarious look at modern relationships and dating.", length: "1h 47m" },
+            { title: "The blind", image: "The blind.png", year: 2023, rating: 7.6, genre: "Drama", description: "A blind musician overcomes adversity to achieve his dreams.", length: "2h 8m" },
+            { title: "The first frost", image: "The first frost.png", year: 2021, rating: 7.3, genre: "Drama", description: "A family drama set in a remote village during a harsh winter.", length: "1h 55m" },
+            { title: "The gentelmen", image: "The gentelmen.png", year: 2019, rating: 7.8, genre: "Crime", description: "A British drug lord tries to sell his empire to a dynasty of Oklahoma billionaires.", length: "1h 53m" },
+            { title: "The gorge", image: "The gorge.png", year: 2023, rating: 7.0, genre: "Adventure", description: "A group of adventurers explore a mysterious canyon with deadly secrets.", length: "2h 5m" },
+            { title: "The hustle", image: "The hustle.png", year: 2019, rating: 6.3, genre: "Comedy", description: "Two rival female con artists try to swindle a naive tech billionaire.", length: "1h 34m" },
+            { title: "The Mehta boys", image: "The Mehta boys.png", year: 2021, rating: 7.2, genre: "Drama", description: "A family saga spanning three generations of an Indian family.", length: "2h 15m" },
+            { title: "The night agent 1", image: "The night agent1.png", year: 2022, rating: 7.7, genre: "Thriller", description: "An FBI agent works in the basement of the White House monitoring emergency calls.", length: "10 episodes" },
+            { title: "The night agent 2", image: "The night agent2.png", year: 2023, rating: 7.9, genre: "Thriller", description: "The second season of the political thriller series.", length: "10 episodes" },
+            { title: "The night agent 3", image: "The night agent3.png", year: 2023, rating: 8.1, genre: "Thriller", description: "The latest installment in the gripping Night Agent series.", length: "10 episodes" },
+            { title: "The sand castle", image: "The sand castle.png", year: 2017, rating: 6.5, genre: "Drama", description: "A soldier struggles to build a school in a remote Iraqi village.", length: "1h 50m" },
+            { title: "The trunk", image: "The trunk.png", year: 2023, rating: 7.4, genre: "Mystery", description: "A family discovers a mysterious trunk in their attic with dark secrets.", length: "2h 2m" },
+            { title: "Thunderbolts", image: "Thunderbolts.png", year: 2023, rating: 7.8, genre: "Action", description: "A team of supervillains are recruited for dangerous government missions.", length: "2h 18m" },
+            { title: "Weak hero class 1", image: "Weak hero class1.png", year: 2022, rating: 8.3, genre: "Action", description: "A model student uses his intelligence to fight bullies in his school.", length: "8 episodes" },
+            { title: "Weak hero class 2", image: "Weak hero class2.png", year: 2023, rating: 8.5, genre: "Action", description: "The continuation of the popular Korean action series.", length: "8 episodes" },
+            { title: "When life gives you tangerines", image: "When life gives you tangerines.png", year: 2021, rating: 7.5, genre: "Comedy", description: "A heartwarming comedy about making the best of difficult situations.", length: "1h 53m" },
+            { title: "Wolf king", image: "Wolf king.png", year: 2023, rating: 7.1, genre: "Fantasy", description: "A mythical tale of a warrior who can transform into a wolf.", length: "2h 10m" },
+            { title: "You 1", image: "You 1.png", year: 2018, rating: 7.7, genre: "Thriller", description: "A dangerously charming man becomes obsessed with a woman he meets.", length: "10 episodes" },
+            { title: "You 2", image: "You 2.png", year: 2019, rating: 7.8, genre: "Thriller", description: "The stalker moves to Los Angeles and falls for a new target.", length: "10 episodes" },
+            { title: "You 3", image: "You 3.png", year: 2021, rating: 7.6, genre: "Thriller", description: "The third season of the psychological thriller series.", length: "10 episodes" },
+            { title: "You 4", image: "You 4.png", year: 2023, rating: 7.4, genre: "Thriller", description: "The latest season of the popular stalker drama.", length: "10 episodes" },
+            { title: "You 5", image: "You 5.png", year: 2023, rating: 7.9, genre: "Thriller", description: "The final season of the thrilling You series.", length: "10 episodes" },
+            { title: "Don't come home", image: "Don't come home.png", year: 2022, rating: 6.8, genre: "Horror", description: "A family returns to their ancestral home only to encounter supernatural terror.", length: "1h 48m" },
+            { title: "Surya's saturday", image: "Surya's saturday.png", year: 2023, rating: 8.0, genre: "Drama", description: "A man who only allows himself to experience emotions on Saturdays.", length: "2h 15m" },
+            { title: "It's okay to not be good", image: "It's okay to not be good.png", year: 2022, rating: 8.2, genre: "Drama", description: "A poignant story about mental health and self-acceptance.", length: "2h 8m" },
+            { title: "Baby John", image: "Baby John.png", year: 2023, rating: 7.3, genre: "Crime", description: "A hitman tries to leave his criminal past behind when he becomes a father.", length: "2h 5m" },
+            { title: "Manifest 1", image: "Manifest 1.png", year: 2018, rating: 7.1, genre: "Sci-Fi", description: "Passengers of a flight that disappeared for five years reappear.", length: "16 episodes" },
+            { title: "Manifest 2", image: "Manifest 2.png", year: 2020, rating: 7.3, genre: "Sci-Fi", description: "The passengers continue to experience mysterious callings.", length: "13 episodes" },
+            { title: "Manifest 3", image: "Manifest 3.png", year: 2021, rating: 7.5, genre: "Sci-Fi", description: "The mystery deepens as the passengers uncover more about their experience.", length: "13 episodes" },
+            { title: "Manifest 4", image: "Manifest 4.png", year: 2023, rating: 8.0, genre: "Sci-Fi", description: "The final season of the popular supernatural drama.", length: "10 episodes" },
+            { title: "Never let go", image: "Never let go.png", year: 2023, rating: 7.2, genre: "Thriller", description: "A mother will do anything to protect her child from a dangerous threat.", length: "1h 55m" },
+            { title: "Apartment 7A", image: "Apartment 7A.png", year: 2023, rating: 7.6, genre: "Horror", description: "A young woman moves into an apartment with a dark history.", length: "1h 50m" },
+            { title: "A song from the dark", image: "A song from the dark.png", year: 2022, rating: 7.7, genre: "Musical", description: "A musician discovers a mysterious song that changes his life.", length: "2h 12m" },
+            { title: "Brimstone", image: "Brimstone.png", year: 2023, rating: 7.4, genre: "Western", description: "A frontier woman fights to survive against a vengeful preacher.", length: "2h 8m" },
+            { title: "Vincenzo", image: "Vincenzo .png", year: 2021, rating: 8.5, genre: "Crime", description: "A Korean-Italian mafia lawyer gives an unrivaled conglomerate a taste of its own medicine.", length: "20 episodes" }
+        ];
+
+        // DOM elements
+        const searchInput = document.getElementById('searchInput');
+        const searchButton = document.getElementById('searchButton');
+        const movieGrid = document.getElementById('movieGrid');
+        const movieCount = document.getElementById('movieCount');
+        const avgRating = document.getElementById('avgRating');
+        const particlesContainer = document.getElementById('neonParticles');
+
+        // Create floating particles
+        function createParticles() {
+            const particleCount = 30;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Random properties
+                const size = Math.random() * 10 + 2;
+                const posX = Math.random() * 100;
+                const delay = Math.random() * 15;
+                const duration = Math.random() * 10 + 15;
+                
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                particle.style.left = `${posX}%`;
+                particle.style.bottom = `-${size}px`;
+                particle.style.animationDelay = `${delay}s`;
+                particle.style.animationDuration = `${duration}s`;
+                
+                particlesContainer.appendChild(particle);
+            }
+        }
+
+        // Calculate average rating
+        function calculateAvgRating() {
+            const total = movies.reduce((sum, movie) => sum + movie.rating, 0);
+            return (total / movies.length).toFixed(1);
+        }
+
+        // Display all movies initially
+        function displayMovies(moviesToShow) {
+            movieGrid.innerHTML = '';
+            
+            if (moviesToShow.length === 0) {
+                movieGrid.innerHTML = `
+                    <div class="no-results">
+                        <i class="fas fa-film"></i>
+                        <h3>No movies found</h3>
+                        <p>Try a different search term</p>
+                    </div>
+                `;
+                return;
+            }
+            
+            moviesToShow.forEach(movie => {
+                const movieCard = document.createElement('div');
+                movieCard.className = 'movie-card';
+                
+                // Mark some movies as featured
+                const isFeatured = [0, 5, 12, 25, 40, 55].includes(moviesToShow.indexOf(movie));
+                
+                movieCard.innerHTML = `
+                    <div class="poster-container">
+                        <img src="${movie.image}" alt="${movie.title}" class="movie-poster">
+                        ${isFeatured ? '<div class="featured-label">FEATURED</div>' : ''}
+                    </div>
+                    <div class="movie-info">
+                        <h3 class="movie-title">${movie.title}</h3>
+                        <div class="movie-meta">
+                            <span class="movie-year">${movie.year}</span>
+                            <span class="movie-rating">${movie.rating}/10</span>
+                            <span class="movie-length">${movie.length}</span>
+                        </div>
+                        <span class="movie-genre">${movie.genre}</span>
+                        <p class="movie-description">${movie.description}</p>
+                        <div class="movie-footer">
+                            <a href="#" class="watch-btn">WATCH NOW</a>
+                        </div>
+                    </div>
+                `;
+                movieGrid.appendChild(movieCard);
+            });
+        }
+
+        // Filter movies based on search term
+        function filterMovies(searchTerm) {
+            if (!searchTerm) return movies;
+            
+            const lowerSearchTerm = searchTerm.toLowerCase();
+            return movies.filter(movie => 
+                movie.title.toLowerCase().includes(lowerSearchTerm) ||
+                movie.description.toLowerCase().includes(lowerSearchTerm) ||
+                movie.genre.toLowerCase().includes(lowerSearchTerm)
+            );
+        }
+
+        // Initialize the page
+        function init() {
+            displayMovies(movies);
+            movieCount.textContent = `${movies.length} Movies Available`;
+            avgRating.textContent = calculateAvgRating();
+            createParticles();
+        }
+
+        // Event listeners
+        searchButton.addEventListener('click', () => {
+            const filteredMovies = filterMovies(searchInput.value);
+            displayMovies(filteredMovies);
+        });
+        
+        searchInput.addEventListener('keyup', function(event) {
+            if (event.key === 'Enter') {
+                const filteredMovies = filterMovies(searchInput.value);
+                displayMovies(filteredMovies);
+            }
+        });
+        
+        searchInput.addEventListener('input', function() {
+            if (this.value === '') {
+                displayMovies(movies);
+            }
+        });
+
+        // Initialize
+        init();
+    </script>
+</body>
+</html>
