@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ku">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KURD KING - مەڵبەندێک بۆ فیلم و</title>
+    <title>KURD KING - مەڵبەندێک بۆ فیلم و دراما</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
         * {
@@ -32,7 +32,7 @@
             position: relative;
         }
         
-        /* Enhanced Neon Effect for KURD KING */
+        /* Enhanced Kurdish Style Logo */
         .logo-container {
             position: relative;
             display: inline-block;
@@ -57,7 +57,7 @@
         }
         
         .logo::before {
-            content: 'KURD KING';
+            content: ' KURDKING';
             position: absolute;
             top: 0;
             left: 0;
@@ -435,6 +435,9 @@
             transition: all 0.3s ease;
             font-size: 1rem;
             box-shadow: 0 5px 15px rgba(255, 43, 77, 0.3);
+            display: flex;
+            align-items: center;
+            gap: 8px;
         }
         
         .watch-btn:hover {
@@ -542,6 +545,21 @@
             }
         }
         
+        /* Kurdish pattern background */
+        .kurdish-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 10% 20%, rgba(255, 43, 77, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 90% 80%, rgba(255, 107, 124, 0.1) 0%, transparent 20%),
+                radial-gradient(circle at 50% 50%, rgba(216, 28, 60, 0.1) 0%, transparent 30%);
+            z-index: -2;
+            pointer-events: none;
+        }
+        
         /* Responsive adjustments */
         @media (max-width: 1200px) {
             .movie-grid {
@@ -636,26 +654,25 @@
 </head>
 <body>
     <div class="neon-particles" id="neonParticles"></div>
+    <div class="kurdish-pattern"></div>
     
     <div class="container">
         <header>
             <div class="logo-container">
-                <div class="logo">KURD KING</div>
-                <div class="neon-tube">KURD KING</div>
-                <div class="neon-reflection">KURD KING</div>
-                <div class="flicker">KURD KING</div>
+                <div class="logo">KURD-KING </div>
+                <div class="neon-reflection">پاشای کورد</div>
+                <div class="flicker"> KURD-KING</div>
             </div>
-            <p class="tagline">Experience cinema in stunning high-definition with our premium collection of movies</p>
+            <p class="tagline">کورد کینگ مەڵبەندێک بۆ فیلم و دراما جیهانییەکان</p>
         </header>
         
         <div class="search-container">
             <div class="search-bar">
-                <input type="text" id="searchInput" placeholder="Search movies by title, genre, or year...">
-                <button id="searchButton"><i class="fas fa-search"></i> SEARCH</button>
+                <input type="text" id="searchInput" placeholder="...گەڕان بۆ ناونیشانێک ">
+                <button id="searchButton"><i class="fas fa-search"></i> گەڕان</button>
             </div>
             <div class="stats">
-                <span id="movieCount">67 Movies Available</span>
-                <span>Average Rating: <span id="avgRating">7.8</span>/10</span>
+                <span id="movieCount">67 فیلم بەردەستە</span>
             </div>
         </div>
         
@@ -665,95 +682,95 @@
         
         <footer>
             <div class="footer-links">
-                <a href="#"><i class="fas fa-home"></i> Home</a>
-                <a href="#"><i class="fas fa-film"></i> Movies</a>
-                <a href="#"><i class="fas fa-tv"></i> Series</a>
-                <a href="#"><i class="fas fa-info-circle"></i> About</a>
-                <a href="#"><i class="fas fa-envelope"></i> Contact</a>
+                <a href="#"><i class="fas fa-home"></i> سەرەکی</a>
+                <a href="#"><i class="fas fa-film"></i> فیلمەکان</a>
+                <a href="#"><i class="fas fa-tv"></i> دراماکان</a>
+                <a href="#"><i class="fas fa-info-circle"></i> دەربارەی ئێمە</a>
+                <a href="#"><i class="fas fa-envelope"></i> پەیوەندی</a>
             </div>
-            <p class="copyright">© 2023 Kurd King. All rights reserved. Premium Movie Streaming Platform.</p>
+            <p class="copyright">© 2023 هەموو مافەکان پارێزراون بۆ ماڵپەڕی کورد-کینگ</p>
         </footer>
     </div>
 
     <script>
         // Movie database with all 67 movies
         const movies = [
-            { title: "A working man", image: "A working man.png", year: 2021, rating: 7.2, genre: "Drama", description: "A hardworking man struggles to balance his job and family life in this emotional drama.", length: "1h 58m" },
-            { title: "American assassin", image: "American assassin.png", year: 2017, rating: 6.8, genre: "Action", description: "A CIA black ops recruit avenges his murdered girlfriend in this action-packed thriller.", length: "1h 52m" },
-            { title: "American liar", image: "American liar.png", year: 2020, rating: 6.5, genre: "Comedy", description: "A pathological liar gets caught up in a web of deception in this hilarious comedy.", length: "1h 45m" },
-            { title: "Arcadian", image: "Arcadian.png", year: 2022, rating: 7.1, genre: "Sci-Fi", description: "In a post-apocalyptic world, a family fights for survival against mysterious creatures.", length: "2h 12m" },
-            { title: "Arcane", image: "Arcane.png", year: 2021, rating: 9.2, genre: "Animation", description: "The origins of two iconic League champions and the power that will tear them apart.", length: "6h 40m" },
-            { title: "Ash", image: "Ash.png", year: 2023, rating: 6.9, genre: "Horror", description: "A group of friends encounter supernatural forces in an abandoned town.", length: "1h 48m" },
-            { title: "Better days", image: "Better days.png", year: 2019, rating: 7.5, genre: "Drama", description: "A bullied teenage girl forms an unlikely friendship with a small-time criminal.", length: "2h 15m" },
-            { title: "Black mirror 1", image: "Black mirror1.png", year: 2011, rating: 8.8, genre: "Sci-Fi", description: "An anthology series exploring techno-paranoia and the dark side of technology.", length: "3h 20m" },
-            { title: "Black mirror 2", image: "Black mirror2.png", year: 2013, rating: 8.6, genre: "Sci-Fi", description: "More tales that tap into the collective unease about the modern world.", length: "3h 30m" },
-            { title: "Black mirror 3", image: "Black mirror3.png", year: 2016, rating: 8.7, genre: "Sci-Fi", description: "Further exploration of twisted, high-tech near-futures.", length: "6h 15m" },
-            { title: "Black mirror 4", image: "Black mirror4.png", year: 2017, rating: 8.4, genre: "Sci-Fi", description: "Six new stories that challenge our relationship with technology.", length: "5h 45m" },
-            { title: "Black mirror 5", image: "Black mirror5.png", year: 2019, rating: 7.9, genre: "Sci-Fi", description: "Three new stories exploring the consequences of advanced technology.", length: "4h 10m" },
-            { title: "Black mirror 6", image: "Black mirror6.png", year: 2022, rating: 7.0, genre: "Sci-Fi", description: "More unsettling tales of humanity's relationship with technology.", length: "4h 55m" },
-            { title: "Black mirror 7", image: "Black mirror7.png", year: 2023, rating: 7.3, genre: "Sci-Fi", description: "The latest season of the acclaimed anthology series.", length: "5h 20m" },
-            { title: "Cinderella game", image: "Cinderella game.png", year: 2021, rating: 6.4, genre: "Romance", description: "A modern retelling of the classic fairy tale with a competitive twist.", length: "1h 52m" },
-            { title: "Cleaner", image: "Cleaner.png", year: 2022, rating: 6.7, genre: "Thriller", description: "A crime scene cleaner discovers evidence that implicates him in a murder.", length: "1h 50m" },
-            { title: "Death note", image: "Death note.png", year: 2006, rating: 8.9, genre: "Animation", description: "A high school student discovers a supernatural notebook that kills anyone whose name is written in it.", length: "37 episodes" },
-            { title: "Death of a unicorn", image: "Death of a unicorn.png", year: 2023, rating: 7.4, genre: "Fantasy", description: "A mythical creature's demise sparks a magical conflict in this fantasy epic.", length: "2h 5m" },
-            { title: "Deva", image: "Deva.png", year: 2022, rating: 7.0, genre: "Drama", description: "A spiritual journey of self-discovery in the mountains of Kurdistan.", length: "1h 55m" },
-            { title: "District B13.1", image: "District B13.1.png", year: 2004, rating: 7.3, genre: "Action", description: "An undercover cop and ex-thug try to infiltrate a gang-controlled ghetto.", length: "1h 25m" },
-            { title: "District B13.2", image: "District B13.2.png", year: 2009, rating: 6.8, genre: "Action", description: "The sequel to the parkour-filled action film set in a dystopian Paris.", length: "1h 41m" },
-            { title: "Du patti", image: "Du patti.png", year: 2022, rating: 7.6, genre: "Crime", description: "A high-stakes poker game turns deadly in this crime thriller.", length: "2h 12m" },
-            { title: "Exhuma", image: "Exhuma.png", year: 2023, rating: 7.8, genre: "Horror", description: "A family moves into a new home only to discover it's haunted by vengeful spirits.", length: "1h 53m" },
-            { title: "G 20", image: "G 20.png", year: 2022, rating: 6.3, genre: "Political", description: "A political thriller centered around the G20 summit and international intrigue.", length: "2h 8m" },
-            { title: "Hannibal 1", image: "Hannibal1.png", year: 2001, rating: 7.8, genre: "Thriller", description: "The continuation of the story of Dr. Hannibal Lecter.", length: "2h 11m" },
-            { title: "Hannibal 2", image: "Hannibal2.png", year: 2002, rating: 7.4, genre: "Thriller", description: "Further adventures of the infamous cannibalistic psychiatrist.", length: "2h 5m" },
-            { title: "Hannibal 3", image: "Hannibal3.png", year: 2007, rating: 7.0, genre: "Thriller", description: "The final chapter in the Hannibal Lecter trilogy.", length: "2h 1m" },
-            { title: "Havoc", image: "Havoc.png", year: 2022, rating: 6.5, genre: "Action", description: "A special forces soldier battles terrorists in a war-torn city.", length: "1h 49m" },
-            { title: "High Rollers", image: "High Rollers.png", year: 2021, rating: 6.9, genre: "Drama", description: "The high-stakes world of professional gambling and its consequences.", length: "2h 3m" },
-            { title: "Hound's hill", image: "Hound's hill.png", year: 2023, rating: 7.7, genre: "Crime", description: "A detective investigates a series of murders in a small mountain town.", length: "2h 15m" },
-            { title: "Iffet", image: "Iffet.png", year: 2020, rating: 7.1, genre: "Drama", description: "A story about honor, tradition, and personal sacrifice in Kurdish society.", length: "2h 8m" },
-            { title: "Immaculate", image: "Immaculate.png", year: 2023, rating: 7.5, genre: "Horror", description: "A nun discovers dark secrets in a remote convent.", length: "1h 56m" },
-            { title: "Mickey 17", image: "Mickey 17.png", year: 2023, rating: 7.9, genre: "Sci-Fi", description: "An expendable employee embarks on a dangerous mission on an ice planet.", length: "2h 22m" },
-            { title: "One life", image: "One life.png", year: 2022, rating: 7.2, genre: "Drama", description: "A man reflects on his life choices and the paths not taken.", length: "1h 58m" },
-            { title: "Our blues", image: "Our blues.png", year: 2022, rating: 8.1, genre: "Drama", description: "A heartfelt drama about life, love, and relationships in a coastal town.", length: "20 episodes" },
-            { title: "Promised hearts", image: "Promised hearts.png", year: 2021, rating: 7.0, genre: "Romance", description: "Two lovers separated by war reunite after many years apart.", length: "1h 52m" },
-            { title: "Remainder", image: "Remainder.png", year: 2023, rating: 6.6, genre: "Thriller", description: "A man with amnesia tries to piece together his mysterious past.", length: "2h 5m" },
-            { title: "Resident playbook", image: "Resident playbook.png", year: 2022, rating: 7.3, genre: "Medical", description: "The lives and challenges of medical residents in a busy hospital.", length: "15 episodes" },
-            { title: "Ski into love", image: "Ski into love.png", year: 2023, rating: 6.8, genre: "Romance", description: "A romantic comedy set against the backdrop of a ski resort.", length: "1h 50m" },
-            { title: "Spring of youth", image: "Spring of youth.png", year: 2022, rating: 7.4, genre: "Drama", description: "A coming-of-age story about a group of friends in their final school year.", length: "16 episodes" },
-            { title: "Subteran", image: "Subteran.png", year: 2023, rating: 7.1, genre: "Sci-Fi", description: "Scientists discover an ancient civilization deep beneath the Earth's surface.", length: "2h 10m" },
-            { title: "The best thing", image: "The best thing.png", year: 2022, rating: 6.9, genre: "Comedy", description: "A hilarious look at modern relationships and dating.", length: "1h 47m" },
-            { title: "The blind", image: "The blind.png", year: 2023, rating: 7.6, genre: "Drama", description: "A blind musician overcomes adversity to achieve his dreams.", length: "2h 8m" },
-            { title: "The first frost", image: "The first frost.png", year: 2021, rating: 7.3, genre: "Drama", description: "A family drama set in a remote village during a harsh winter.", length: "1h 55m" },
-            { title: "The gentelmen", image: "The gentelmen.png", year: 2019, rating: 7.8, genre: "Crime", description: "A British drug lord tries to sell his empire to a dynasty of Oklahoma billionaires.", length: "1h 53m" },
-            { title: "The gorge", image: "The gorge.png", year: 2023, rating: 7.0, genre: "Adventure", description: "A group of adventurers explore a mysterious canyon with deadly secrets.", length: "2h 5m" },
-            { title: "The hustle", image: "The hustle.png", year: 2019, rating: 6.3, genre: "Comedy", description: "Two rival female con artists try to swindle a naive tech billionaire.", length: "1h 34m" },
-            { title: "The Mehta boys", image: "The Mehta boys.png", year: 2021, rating: 7.2, genre: "Drama", description: "A family saga spanning three generations of an Indian family.", length: "2h 15m" },
-            { title: "The night agent 1", image: "The night agent1.png", year: 2022, rating: 7.7, genre: "Thriller", description: "An FBI agent works in the basement of the White House monitoring emergency calls.", length: "10 episodes" },
-            { title: "The night agent 2", image: "The night agent2.png", year: 2023, rating: 7.9, genre: "Thriller", description: "The second season of the political thriller series.", length: "10 episodes" },
-            { title: "The night agent 3", image: "The night agent3.png", year: 2023, rating: 8.1, genre: "Thriller", description: "The latest installment in the gripping Night Agent series.", length: "10 episodes" },
-            { title: "The sand castle", image: "The sand castle.png", year: 2017, rating: 6.5, genre: "Drama", description: "A soldier struggles to build a school in a remote Iraqi village.", length: "1h 50m" },
-            { title: "The trunk", image: "The trunk.png", year: 2023, rating: 7.4, genre: "Mystery", description: "A family discovers a mysterious trunk in their attic with dark secrets.", length: "2h 2m" },
-            { title: "Thunderbolts", image: "Thunderbolts.png", year: 2023, rating: 7.8, genre: "Action", description: "A team of supervillains are recruited for dangerous government missions.", length: "2h 18m" },
-            { title: "Weak hero class 1", image: "Weak hero class1.png", year: 2022, rating: 8.3, genre: "Action", description: "A model student uses his intelligence to fight bullies in his school.", length: "8 episodes" },
-            { title: "Weak hero class 2", image: "Weak hero class2.png", year: 2023, rating: 8.5, genre: "Action", description: "The continuation of the popular Korean action series.", length: "8 episodes" },
-            { title: "When life gives you tangerines", image: "When life gives you tangerines.png", year: 2021, rating: 7.5, genre: "Comedy", description: "A heartwarming comedy about making the best of difficult situations.", length: "1h 53m" },
-            { title: "Wolf king", image: "Wolf king.png", year: 2023, rating: 7.1, genre: "Fantasy", description: "A mythical tale of a warrior who can transform into a wolf.", length: "2h 10m" },
-            { title: "You 1", image: "You 1.png", year: 2018, rating: 7.7, genre: "Thriller", description: "A dangerously charming man becomes obsessed with a woman he meets.", length: "10 episodes" },
-            { title: "You 2", image: "You 2.png", year: 2019, rating: 7.8, genre: "Thriller", description: "The stalker moves to Los Angeles and falls for a new target.", length: "10 episodes" },
-            { title: "You 3", image: "You 3.png", year: 2021, rating: 7.6, genre: "Thriller", description: "The third season of the psychological thriller series.", length: "10 episodes" },
-            { title: "You 4", image: "You 4.png", year: 2023, rating: 7.4, genre: "Thriller", description: "The latest season of the popular stalker drama.", length: "10 episodes" },
-            { title: "You 5", image: "You 5.png", year: 2023, rating: 7.9, genre: "Thriller", description: "The final season of the thrilling You series.", length: "10 episodes" },
-            { title: "Don't come home", image: "Don't come home.png", year: 2022, rating: 6.8, genre: "Horror", description: "A family returns to their ancestral home only to encounter supernatural terror.", length: "1h 48m" },
-            { title: "Surya's saturday", image: "Surya's saturday.png", year: 2023, rating: 8.0, genre: "Drama", description: "A man who only allows himself to experience emotions on Saturdays.", length: "2h 15m" },
-            { title: "It's okay to not be good", image: "It's okay to not be good.png", year: 2022, rating: 8.2, genre: "Drama", description: "A poignant story about mental health and self-acceptance.", length: "2h 8m" },
-            { title: "Baby John", image: "Baby John.png", year: 2023, rating: 7.3, genre: "Crime", description: "A hitman tries to leave his criminal past behind when he becomes a father.", length: "2h 5m" },
-            { title: "Manifest 1", image: "Manifest 1.png", year: 2018, rating: 7.1, genre: "Sci-Fi", description: "Passengers of a flight that disappeared for five years reappear.", length: "16 episodes" },
-            { title: "Manifest 2", image: "Manifest 2.png", year: 2020, rating: 7.3, genre: "Sci-Fi", description: "The passengers continue to experience mysterious callings.", length: "13 episodes" },
-            { title: "Manifest 3", image: "Manifest 3.png", year: 2021, rating: 7.5, genre: "Sci-Fi", description: "The mystery deepens as the passengers uncover more about their experience.", length: "13 episodes" },
-            { title: "Manifest 4", image: "Manifest 4.png", year: 2023, rating: 8.0, genre: "Sci-Fi", description: "The final season of the popular supernatural drama.", length: "10 episodes" },
-            { title: "Never let go", image: "Never let go.png", year: 2023, rating: 7.2, genre: "Thriller", description: "A mother will do anything to protect her child from a dangerous threat.", length: "1h 55m" },
-            { title: "Apartment 7A", image: "Apartment 7A.png", year: 2023, rating: 7.6, genre: "Horror", description: "A young woman moves into an apartment with a dark history.", length: "1h 50m" },
-            { title: "A song from the dark", image: "A song from the dark.png", year: 2022, rating: 7.7, genre: "Musical", description: "A musician discovers a mysterious song that changes his life.", length: "2h 12m" },
-            { title: "Brimstone", image: "Brimstone.png", year: 2023, rating: 7.4, genre: "Western", description: "A frontier woman fights to survive against a vengeful preacher.", length: "2h 8m" },
-            { title: "Vincenzo", image: "Vincenzo .png", year: 2021, rating: 8.5, genre: "Crime", description: "A Korean-Italian mafia lawyer gives an unrivaled conglomerate a taste of its own medicine.", length: "20 episodes" }
+            { title: "A working man ", image: "A working man.png", year: 2021, rating: 7.2, genre: "دراما", description: "پیاوێکی کارکەس هەوڵدەدات کار و ژیانی خێزانەکەی هاوسەنگ بکات", length: " 1h 58m" },
+            { title: "American assassin", image: "American assassin.png", year: 2017, rating: 6.8, genre: "ئەکشن", description: "هەڵگری نوێی سەربازی سی ئای ئە یەکێتی لە دۆستەکەی دەکات", length: "1h 52m" },
+            { title: "American liar", image: "American liar.png", year: 2020, rating: 6.5, genre: "کۆمێدی", description: "درۆزنێکی پاتۆلۆجیکی لە تۆڕێکی درۆدا دەگیرێت", length: "1h 45m" },
+            { title: "Arcadian", image: "Arcadian.png", year: 2022, rating: 7.1, genre: "زانستی خەیاڵی", description: "لە جیهانێکی ڕووخاودا، خێزانێک بۆ مانەوە شەڕ دەکات", length: "2h 12m" },
+            { title: "Arcane", image: "Arcane.png", year: 2021, rating: 9.2, genre: "ئەنیمەیشن", description: "سەرچاوەی دوو پاڵەوانی دیاری لیگ و هێزەکەی کە دەیانپەڕێنێت", length: "6h 40m" },
+            { title: "Ash", image: "Ash.png", year: 2023, rating: 6.9, genre: "ترسناک", description: "گروپێک هاوڕێ لە شارێکی بەجێهێڵراودا هێزی سەروو سروشتی دەبینن", length: "1h 48m" },
+            { title: "Better days", image: "Better days.png", year: 2019, rating: 7.5, genre: "دراما", description: "کچێکی هەرزەکار کە خراپ مامەڵەی لەگەڵ دەکرێت پەیوەندییەکی نائاسایی لەگەڵ تاوانبارێکی بچووک دەکات", length: "2h 15m" },
+            { title: "Black mirror 1", image: "Black mirror1.png", year: 2011, rating: 8.8, genre: "زانستی خەیاڵی", description: "زنجیرەیەکی کۆکراوە کە لێکۆڵینەوە دەکات لە تەکنۆ-پارانۆیا و لایەنی تاریکی تەکنەلۆژیا", length: "3h 20m" },
+            { title: "Black mirror 2", image: "Black mirror2.png", year: 2013, rating: 8.6, genre: "زانستی خەیاڵی", description: "چیرۆکە زیاترەکان کە دەچنە ناو بێزاربوونی کۆکراو لەسەر جیهانی مۆدێرن", length: "3h 30m" },
+            { title: "Black mirror 3", image: "Black mirror3.png", year: 2016, rating: 8.7, genre: "زانستی خەیاڵی", description: "لێکۆڵینەوەی زیاتر لە داهاتووی نزیکی تەکنۆلۆژیا", length: "6h 15m" },
+            { title: "Black mirror 4", image: "Black mirror4.png", year: 2017, rating: 8.4, genre: "زانستی خەیاڵی", description: "شەش چیرۆکی نوێ کە پەیوەندی ئێمە لەگەڵ تەکنەلۆژیا بەرەنگار دەکەنەوە", length: "5h 45m" },
+            { title: "Black mirror 5", image: "Black mirror5.png", year: 2019, rating: 7.9, genre: "زانستی خەیاڵی", description: "سێ چیرۆکی نوێ کە لێکۆڵینەوە دەکەن لە دەرئەنجامەکانی تەکنەلۆژیای پێشکەوتوو", length: "4h 10m" },
+            { title: "Black mirror 6", image: "Black mirror6.png", year: 2022, rating: 7.0, genre: "زانستی خەیاڵی", description: "چیرۆکە زیاترەکانی نائارامی لە پەیوەندی مرۆڤایەتی لەگەڵ تەکنەلۆژیا", length: "4h 55m" },
+            { title: "Black mirror 7", image: "Black mirror7.png", year: 2023, rating: 7.3, genre: "زانستی خەیاڵی", description: "وەرزی نوێی زنجیرەی کۆکراوە بەناوبانگەکان", length: "5h 20m" },
+            { title: "Cinderella game", image: "Cinderella game.png", year: 2021, rating: 6.4, genre: "ڕۆمانسی", description: "وەرگێڕانێکی مۆدێرن لە چیرۆکی خەیاڵی کلاسیک بە تێکەڵەیەک پێشبڕکێی", length: "1h 52m" },
+            { title: "Cleaner", image: "Cleaner.png", year: 2022, rating: 6.7, genre: "سەرکێشی", description: "پاککەرەوەی شوێنی تاوان بەڵگەی دەدۆزێتەوە کە ئەوی لە کووشتندا تۆمەتبار دەکات", length: "1h 50m" },
+            { title: "Death note", image: "Death note.png", year: 2006, rating: 8.9, genre: "ئەنیمەیشن", description: "خوێندکارێکی ئامادەیی دەفەرموویەکی سەروو سروشتی دەدۆزێتەوە کە هەر کەسێک ناوی تێدا بنوسرێت دەمرێت", length: "37 Episode" },
+            { title: "Death of a unicorn", image: "Death of a unicorn.png", year: 2023, rating: 7.4, genre: "فانتازیا", description: "مردنی بوونەوەرێکی ئەفسانەیی شەڕێکی جادوویی دەهێنێتە ئاراوە", length: "2h 5m" },
+            { title: "Deva", image: "Deva.png", year: 2022, rating: 7.0, genre: "دراما", description: "گەشتێکی ڕۆحی بۆ دۆزینەوەی خۆی لە شاخەکانی کوردستان", length: "1h 55m" },
+            { title: "District B13.1", image: "District B13.1.png", year: 2004, rating: 7.3, genre: "ئەکشن", description: "پۆلیسێکی نھێنی و پێشوەختاگری پێشوو هەوڵدەدات بچنە ناو گێتۆیەک کە لەلایەن گرووپێکەوە کۆنترۆڵ کراوە", length: "1h 25m" },
+            { title: "District B13.2", image: "District B13.2.png", year: 2009, rating: 6.8, genre: "ئەکشن", description: "بەردەوامی فیلمی ئەکشن پەرکور لە پاریسێکی نائومێدیدا", length: "1h 41m" },
+            { title: "Du patti", image: "Du patti.png", year: 2022, rating: 7.6, genre: "تاوان", description: "یاری پۆکەرێکی مەترسیدار لەم فیلمی تاوانی سەرکێشیدا دەبێتە کووشتەر", length: "2h 12m" },
+            { title: "Exhuma", image: "Exhuma.png", year: 2023, rating: 7.8, genre: "ترسناک", description: "خێزانێک دەچنە ناو ماڵێکی نوێ تەنها بۆ ئەوەی بزانن کە شوێنەکە هاوار کراوە بە ڕوحی تۆڵەسێنەر", length: "1h 53m" },
+            { title: "G 20", image: "G 20.png", year: 2022, rating: 6.3, genre: "سیاسی", description: "سەرکێشییەکی سیاسی ناوەڕاستی کۆبوونەوەی G20 و نھێنی نێودەوڵەتی", length: "2h 8m" },
+            { title: "Hannibal 1", image: "Hannibal1.png", year: 2001, rating: 7.8, genre: "سەرکێشی", description: "بەردەوامی چیرۆکی دکتۆر هانیباڵ لێکتەر", length: "2h 11m" },
+            { title: "Hannibal 2", image: "Hannibal2.png", year: 2002, rating: 7.4, genre: "سەرکێشی", description: "سەرکێشی زیاتری پزیشکی دەروونی کەننیباڵی ناودار", length: "2h 5m" },
+            { title: "Hannibal 3", image: "Hannibal3.png", year: 2007, rating: 7.0, genre: "سەرکێشی", description: "بەشی کۆتایی لە سێگۆشەی هانیباڵ لێکتەر", length: "2h 1m" },
+            { title: "Havoc", image: "Havoc.png", year: 2022, rating: 6.5, genre: "ئەکشن", description: "سەربازێکی هێزە تایبەتەکان لە شارێکی جەنگاویدا شەڕ دەکات لەگەڵ تیرۆریستەکان", length: "1h 49m" },
+            { title: "High Rollers", image: "High Rollers.png", year: 2021, rating: 6.9, genre: "دراما", description: "جیهانی بەرزەکانی قومارکردنی پیشەگەر و دەرئەنجامەکانی", length: "2h 3m" },
+            { title: "Hound's hill", image: "Hound's hill.png", year: 2023, rating: 7.7, genre: "تاوان", description: "دیتەکتیڤ لێکۆڵینەوە لە زنجیرەیەک کووشتندا دەکات لە شارۆچکەیەکی شاخی بچووک", length: "2h 15m" },
+            { title: "Iffet", image: "Iffet.png", year: 2020, rating: 7.1, genre: "دراما", description: "چیرۆکێک لەسەر شەرەف، نەریت، و قوربانیی کەسی لە کۆمەڵگای کوردیدا", length: "2h 8m" },
+            { title: "Immaculate", image: "Immaculate.png", year: 2023, rating: 7.5, genre: "ترسناک", description: "ڕاهێبە کەسێکی نھێنی تاریک دەدۆزێتەوە لە کۆنڤێنتێکی دوورەدەست", length: "1h 56m" },
+            { title: "Mickey 17", image: "Mickey 17.png", year: 2023, rating: 7.9, genre: "زانستی خەیاڵی", description: "کارمەندێکی پەسەندکراو دەست بە مەشقێکی مەترسیدار دەکات لەسەر هەسارەیەکی سەهۆڵی", length: "2h 22m" },
+            { title: "One life", image: "One life.png", year: 2022, rating: 7.2, genre: "دراما", description: "پیاویک بیر لە هەڵبژاردنی ژیانی خۆی دەکاتەوە و ڕێگاکانی نەڕۆیشتوو", length: "1h 58m" },
+            { title: "Our blues", image: "Our blues.png", year: 2022, rating: 8.1, genre: "دراما", description: "درامایەکی دڵدار لەسەر ژیان، خۆشەویستی، و پەیوەندی لە شارۆچکەیەکی کەنار دەریادا", length: "20 Episode" },
+            { title: "Promised hearts", image: "Promised hearts.png", year: 2021, rating: 7.0, genre: "ڕۆمانسی", description: "دوو خۆشەویست کە لەلایەن جەنگەوە جیابوونەتەوە دوای چەندین ساڵ کەوتنەوە یەکتر دەبینن", length: "1h 52m" },
+            { title: "Remainder", image: "Remainder.png", year: 2023, rating: 6.6, genre: "سەرکێشی", description: "پیاویک کە بیرچاوەڵوانیی هەیە هەوڵدەدات ڕابردووی نھێنی خۆی پێکەوە بنێت", length: "2h 5m" },
+            { title: "Resident playbook", image: "Resident playbook.png", year: 2022, rating: 7.3, genre: "پزیشکی", description: "ژیان و بەرەنگاربوونەوەکانی نیشتیمانە پزیشکییەکان لە نەخۆشخانەیەکی سەرقاڵدا", length: "15 Episode" },
+            { title: "Ski into love", image: "Ski into love.png", year: 2023, rating: 6.8, genre: "ڕۆمانسی", description: "کۆمێدییەکی ڕۆمانسی لە پشتەوەی شوێنی سکییەکە", length: "1h 50m" },
+            { title: "Spring of youth", image: "Spring of youth.png", year: 2022, rating: 7.4, genre: "دراما", description: "چیرۆکێکی گەشەسەندن لەسەر گروپێک هاوڕێ لە کۆتا ساڵی قوتابخانەیان", length: "16 Episode" },
+            { title: "Subteran", image: "Subteran.png", year: 2023, rating: 7.1, genre: "زانستی خەیاڵی", description: "زاناكان شارستانیەتێکی کۆن دەدۆزنەوە لە ژێر ڕووی زەوی", length: "2h 10m" },
+            { title: "The best thing", image: "The best thing.png", year: 2022, rating: 6.9, genre: "کۆمێدی", description: "سەیرکردنێکی پێکەنیناوی سەر پەیوەندییە مۆدێرنەکان و خۆشەویستی", length: "1h 47m" },
+            { title: "The blind", image: "The blind.png", year: 2023, rating: 7.6, genre: "دراما", description: "مۆسیقارێکی نابینا بەرەنگاری نائاسایی دەبێتەوە بۆ گەیشتن بە خەونەکانی", length: "2h 8m" },
+            { title: "The first frost", image: "The first frost.png", year: 2021, rating: 7.3, genre: "دراما", description: "درامای خێزانێک لە گوندێکی دوورەدەست لە زستانێکی سەختدا", length: "1h 55m" },
+            { title: "The gentelmen", image: "The gentelmen.png", year: 2019, rating: 7.8, genre: "تاوان", description: "پاشایەکی دەرمانی بەریتانی هەوڵدەدات ئیمپراتۆریەتەکەی بفرۆشێت بە دەسەڵاتدارێکی ئۆکلاهۆما", length: "1h 53m" },
+            { title: "The gorge", image: "The gorge.png", year: 2023, rating: 7.0, genre: "سەرکێشی", description: "گروپێک سەرکێش شوێنەواری درەیەکی نھێنی دەکەن کە ڕازە کووشتەرەکانی هەیە", length: "2h 5m" },
+            { title: "The hustle", image: "The hustle.png", year: 2019, rating: 6.3, genre: "کۆمێدی", description: "دوو فێڵکاری ڕکابەری ژن هەوڵدەدەن میلیارێرێکی تەکنەلۆجیای سادە فێڵی بکەن", length: "1h 34m" },
+            { title: "The Mehta boys", image: "The Mehta boys.png", year: 2021, rating: 7.2, genre: "دراما", description: "ساگای خێزانێک کە سێ نەوەی خێزانێکی هیندی دەگرێتەوە", length: "2h 15m" },
+            { title: "The night agent 1", image: "The night agent1.png", year: 2022, rating: 7.7, genre: "سەرکێشی", description: "کارمەندێکی ئێف بی ئای لە ژێرزەمینی کۆشکی سپی کار دەکات بۆ چاودێریکردنی پەیوەندییە فریاکەوتنەکان", length: "10 Episode" },
+            { title: "The night agent 2", image: "The night agent2.png", year: 2023, rating: 7.9, genre: "سەرکێشی", description: "وەرزی دووەمی زنجیرەی سەرکێشی سیاسی", length: "10 Episode" },
+            { title: "The night agent 3", image: "The night agent3.png", year: 2023, rating: 8.1, genre: "سەرکێشی", description: "بەشی نوێی زنجیرەی سەرکێشی کارمەندە شەوانەکە", length: "10 Episode" },
+            { title: "The sand castle", image: "The sand castle.png", year: 2017, rating: 6.5, genre: "دراما", description: "سەربازێک هەوڵدەدات قوتابخانەیەک دروست بکات لە گوندێکی دوورەدەستی عێراق", length: "1h 50m" },
+            { title: "The trunk", image: "The trunk.png", year: 2023, rating: 7.4, genre: "نھێنی", description: "خێزانێک چەندەمەکێکی نھێنی دەدۆزنەوە لە ژووری سەرەوەی ماڵەکەیان کە ڕازە تاریکەکانی هەیە", length: "2h 2m" },
+            { title: "Thunderbolts", image: "Thunderbolts.png", year: 2023, rating: 7.8, genre: "ئەکشن", description: "تیمێک لە تاوانکارە گەورەکان بۆ مەشقە مەترسیدارەکانی حکومەت هەڵدەبژێردرێن", length: "2h 18m" },
+            { title: "Weak hero class 1", image: "Weak hero class1.png", year: 2022, rating: 8.3, genre: "ئەکشن", description: "خوێندکارێکی مۆدێل زیرەکی خۆی بەکاردەهێنێت بۆ شەڕکردن لەگەڵ بلیزەکان لە قوتابخانەکەیدا", length: "8 Episode" },
+            { title: "Weak hero class 2", image: "Weak hero class2.png", year: 2023, rating: 8.5, genre: "ئەکشن", description: "بەردەوامی زنجیرەی ئەکشنی کۆریای بەناوبانگ", length: "٨ بەش" },
+            { title: "When life gives you tangerines", image: "When life gives you tangerines.png", year: 2021, rating: 7.5, genre: "کۆمێدی", description: "کۆمێدییەکی دڵتەزێن لەسەر باشترین شتکردن لە بارودۆخە قورسەکان", length: "1h 53m" },
+            { title: "Wolf king", image: "Wolf king.png", year: 2023, rating: 7.1, genre: "فانتازیا", description: "چیرۆکی ئەفسانەیی جەنگاوەرێک کە دەتوانێت بگۆڕدرێت بۆ گورگ", length: "2h 10m" },
+            { title: "You 1", image: "You 1.png", year: 2018, rating: 7.7, genre: "سەرکێشی", description: "پیاویک بە شێوەیەکی مەترسیدار خۆشەویست دەبێتەوە و خولیای ژنێک دەبێت کە ناسیویەتی", length: "10 Episode" },
+            { title: "You 2", image: "You 2.png", year: 2019, rating: 7.8, genre: "سەرکێشی", description: "شوێنکەوتووەکە دەچێت بۆ لۆس ئەنجلس و دەکەوێتە خۆشەویستی بۆ ئامانجێکی نوێ", length: "10 Episode" },
+            { title: "You 3", image: "You 3.png", year: 2021, rating: 7.6, genre: "سەرکێشی", description: "وەرزی سێیەمی زنجیرەی سەرکێشی دەروونی", length: "10 Episode" },
+            { title: "You 4", image: "You 4.png", year: 2023, rating: 7.4, genre: "سەرکێشی", description: "وەرزی نوێی درامای شوێنکەوتووی بەناوبانگ", length: "10 Episode" },
+            { title: "You 5", image: "You 5.png", year: 2023, rating: 7.9, genre: "سەرکێشی", description: "وەرزی کۆتایی زنجیرەی سەرکێشی تۆ", length: "10 Episode" },
+            { title: "Don't come home", image: "Don't come home.png", year: 2022, rating: 6.8, genre: "ترسناک", description: "خێزانێک دەگەڕێنەوە ماڵی باوباپیرانیان تەنها بۆ ئەوەی ڕووبەڕووی ترسێکی سەروو سروشتی بن", length: "1h 48m" },
+            { title: "Surya's saturday", image: "Surya's saturday.png", year: 2023, rating: 8.0, genre: "دراما", description: "پیاویک تەنها ڕێگە بە هەستەکانی خۆی دەدات لە شەممەکان", length: "2h 15m" },
+            { title: "It's okay to not be good", image: "It's okay to not be good.png", year: 2022, rating: 8.2, genre: "دراما", description: "چیرۆکێکی بەهێز لەسەر تەندروستی دەروونی و قبوڵکردنی خۆ", length: "2h 8m" },
+            { title: "Baby John", image: "Baby John.png", year: 2023, rating: 7.3, genre: "تاوان", description: "کوشتەرێک هەوڵدەدات ڕابردووی تاوانکاری خۆی بەجێبهێڵێت کاتێک دەبێت بە باوک", length: "2h 5m" },
+            { title: "Manifest 1", image: "Manifest 1.png", year: 2018, rating: 7.1, genre: "زانستی خەیاڵی", description: "گەشتیارانی فڕۆکەیەک کە بۆ پێنج ساڵ ون بوون دووبارە دەرکەوتن", length: "16 Episode" },
+            { title: "Manifest 2", image: "Manifest 2.png", year: 2020, rating: 7.3, genre: "زانستی خەیاڵی", description: "گەشتیارەکان بەردەوامن لە ئەزموونکردنی بانگ کردنە نھێنییەکان", length: "13 Episode" },
+            { title: "Manifest 3", image: "Manifest 3.png", year: 2021, rating: 7.5, genre: "زانستی خەیاڵی", description: "نھێنییەکە قوڵتر دەبێت کاتێک گەشتیارەکان زانیاری زیاتر دەدۆزنەوە لەسەر ئەزموونەکەیان", length: "13 Episode" },
+            { title: "Manifest 4", image: "Manifest 4.png", year: 2023, rating: 8.0, genre: "زانستی خەیاڵی", description: "وەرزی کۆتایی زنجیرەی سەروو سروشتی بەناوبانگ", length: "10 Episode" },
+            { title: "Never let go", image: "Never let go.png", year: 2023, rating: 7.2, genre: "سەرکێشی", description: "دایکێک هەموو شتێک دەکات بۆ پاراستنی منداڵەکەی لە هەڕەشەیەکی مەترسیدار", length: "1h 55m" },
+            { title: "Apartment 7A", image: "Apartment 7A.png", year: 2023, rating: 7.6, genre: "ترسناک", description: "کچێکی گەنج دەچێتە ناو ئەپارتمێنتێک بە مێژوویەکی تاریک", length: "١ک ٥٠ز" },
+            { title: "A song from the dark", image: "A song from the dark.png", year: 2022, rating: 7.7, genre: "مۆسیقا", description: "مۆسیقارێک گۆرانییەکی نھێنی دەدۆزێتەوە کە ژیانی دەگۆڕێت", length: "2h 12m" },
+            { title: "Brimstone", image: "Brimstone.png", year: 2023, rating: 7.4, genre: "کەناری ڕۆژئاوا", description: "ژنێکی سنووری شەڕ دەکات بۆ مانەوە لە دژی وەعیزگۆرێکی تۆڵەسێنەر", length: "2h 8m" },
+            { title: "Vincenzo", image: "Vincenzo .png", year: 2021, rating: 8.5, genre: "تاوان", description: "پارێزەری مافیا کۆری-ئیتاڵی تامێکی بێوێنەی خۆی دەدات بە کۆمپانیایەکی بێوێنە", length: "20 Episode" }
         ];
 
         // DOM elements
@@ -803,8 +820,8 @@
                 movieGrid.innerHTML = `
                     <div class="no-results">
                         <i class="fas fa-film"></i>
-                        <h3>No movies found</h3>
-                        <p>Try a different search term</p>
+                        <h3>هیچ فیلمێک نەدۆزرایەوە</h3>
+                        <p>هەوڵبە بۆ وشەیەکی دیکە بگەڕێ</p>
                     </div>
                 `;
                 return;
@@ -820,7 +837,7 @@
                 movieCard.innerHTML = `
                     <div class="poster-container">
                         <img src="${movie.image}" alt="${movie.title}" class="movie-poster">
-                        ${isFeatured ? '<div class="featured-label">FEATURED</div>' : ''}
+                        ${isFeatured ? '<div class="featured-label">هەڵبژاردە</div>' : ''}
                     </div>
                     <div class="movie-info">
                         <h3 class="movie-title">${movie.title}</h3>
@@ -832,7 +849,7 @@
                         <span class="movie-genre">${movie.genre}</span>
                         <p class="movie-description">${movie.description}</p>
                         <div class="movie-footer">
-                            <a href="#" class="watch-btn">WATCH NOW</a>
+                            <a href="#" class="watch-btn"><i class="fas fa-play"></i> سەیرکردن</a>
                         </div>
                     </div>
                 `;
@@ -855,7 +872,7 @@
         // Initialize the page
         function init() {
             displayMovies(movies);
-            movieCount.textContent = `${movies.length} Movies Available`;
+            movieCount.textContent = `${movies.length} فیلم بەردەستە`;
             avgRating.textContent = calculateAvgRating();
             createParticles();
         }
